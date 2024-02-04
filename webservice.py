@@ -19,6 +19,7 @@ class UrlItem(BaseModel):
 
 @app.post("/check_url/")
 async def check_url(item: UrlItem):
+    print(item)
     url_str = str(item.url)
     print(url_str)
     parsed_url = urlparse(url_str)
