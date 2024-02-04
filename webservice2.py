@@ -1,4 +1,6 @@
 # Import FastAPI and Uvicorn
+import logging
+
 from fastapi import FastAPI
 from typing import List
 import uvicorn
@@ -9,6 +11,7 @@ app = FastAPI()
 # Define your endpoint
 @app.get("/vz_urls", response_model=List[str])
 async def read_vz_urls():
+    logging.info("read_vz_urls")
     # Return a list of URLs
     return ["google.com",
             "github.com",
